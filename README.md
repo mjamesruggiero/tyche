@@ -27,6 +27,8 @@ java -jar target/server.jar
 
 The Greek goddess of chance, with whom the Roman Fortuna was later identified; a capricious dispenser of good and ill fortune. 
 
+<img src="doc/tyche.jpg"/>
+
 ## License
 
 Copyright ©  Michael Ruggiero
