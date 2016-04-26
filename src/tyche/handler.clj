@@ -1,14 +1,15 @@
 (ns tyche.handler
   (:require [compojure.api.sweet :refer :all]
             [ring.util.http-response :refer :all]
-            [schema.core :as s]))
+            [schema.core :as s])
+  (:import java.util.Date))
 
-(s/defschema Pizza
+(s/defschema Stock
   {:name s/Str
    (s/optional-key :description) s/Str
-   :size (s/enum :L :M :S)
-   :origin {:country (s/enum :FI :PO)
-            :city s/Str}})
+   :symbol s/Str
+   :price s/Num
+   :date (s/maybe Date)})
 
 (def app
   (api
@@ -29,7 +30,7 @@
         (ok {:result (+ x y)}))
 
       (POST "/echo" []
-        :return Pizza
-        :body [pizza Pizza]
-        :summary "echoes a Pizza"
-        (ok pizza)))))
+        :return Stock
+        :body [stock Stock]
+        :summary "echoes a Stock"
+        (ok stock)))))
