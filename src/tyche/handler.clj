@@ -17,7 +17,7 @@
      {:ui "/"
       :spec "/swagger.json"
       :data {:info {:title "Tyche"
-                    :description "Compojure Api example"}
+                    :description "Stock tracker"}
              :tags [{:name "api", :description "some apis"}]}}}
 
     (context "/api" []
